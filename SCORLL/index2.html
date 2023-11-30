@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <header>
+    <a href="apro.afreecatv.com" ><h1 src="apro.afreecatv.com" >Apro</h1> </a>
+    <nav>
+    <span>Menu1</span> 
+        <span>Menu2</span>
+        <span>Menu3</span>
+        </nav>
+</header>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name = "viewport" content="width=device-width,initial-scale=1.0">
+<title> DOCUMENT</title>
+</head>
+
+<body>
+<style>
+body{
+background: black;
+height: 6000px;
+font-family: 'nanumsquare';
+
+}
+div{
+    margin-top: 1000px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+
+
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  height: 75px;
+  padding: 1rem;
+  color: white;
+  background: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a{
+    color: white;
+}
+</style>
+<div><h1>Apro 리뉴얼</h1></div>
+<div><h1>Apro가 새로 단장을 했습니다</h1></div>
+<div><h1>어떻게 바뀌었냐고요?</h1></div>
+<div><h1>아래 사진을 눌러주세여</h1></div>
+<div><a href='apro.afreecatv.com'><img src="apro.png" ></a></div>
+
+<script>
+
+let observer = new IntersectionObserver((e)=> {
+e.forEach((box)=> {
+    console.log('observer');
+    if(box.isIntersecting) {
+        box.target.style.opacity = 1;
+
+    }else{
+        box.target.style.opacity = 0;
+
+    }
+    
+
+
+
+})
+
+})
+
+let div = document.querySelectorAll('div')
+observer.observe(div[0])
+observer.observe(div[1])
+observer.observe(div[2])
+observer.observe(div[3])
+observer.observe(div[4])
+
+
+
+
+observer.observe() //html 요소가 화면에 등장하는 감시하는 태그
+
+
+</script>
+</body>
+
+</html>
